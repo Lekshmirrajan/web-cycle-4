@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIANGLE AREA CALCULATOR</title>
+</head>
+<body>
+
+<h2>Triangle Area Calculator</h2>
+
+<!-- Form for user input -->
+<form action="" method="POST">
+    Enter the base of the triangle: <input type="number" name="base" required><br><br>
+    Enter the height of the triangle: <input type="number" name="height" required><br><br>
+    <input type="submit" value="Calculate Area">
+</form>
+
+<?php
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the base and height values from the form
+    $base = $_POST['base'];
+    $height = $_POST['height'];
+    
+    // Calculate the area of the triangle
+    $area = 0.5 * $base * $height;
+
+    // Display the result
+    echo "<h2>Triangle Area Result</h2>";
+    echo "<p>Base: $base units</p>";
+    echo "<p>Height: $height units</p>";
+    echo "<p>Area of the triangle: $area square units</p>";
+}
+?>
+
+</body>
+</html>
