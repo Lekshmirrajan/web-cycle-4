@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>STUDENT GRADE CHECKER</title>
+</head>
+<body>
+<h1>Enter Student Marks</h1>
+<form action="" method="POST">
+    Marks (in %): <input type="number" name="marks" required>
+    <input type="submit" value="Check Grade">
+</form>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Ensure the marks input is set and not empty
+    if (isset($_POST['marks']) && !empty($_POST['marks'])) {
+        $marks = $_POST['marks'];
+
+        // Check the grade based on marks
+        if ($marks >= 60) {
+            $grade = "First Division";
+        } elseif ($marks >= 45 && $marks < 60) {
+            $grade = "Second Division";
+        } elseif ($marks >= 33 && $marks < 45) {
+            $grade = "Third Division";
+        } else {
+            $grade = "Fail";
+        }
+
+        // Display the result
+        echo "<h2>Grade Result</h2>";
+        echo "<p>Marks: $marks %</p>";
+        echo "<p>Grade: $grade</p>";
+    } else {
+        echo "<p>Please enter valid marks.</p>";
+    }
+}
+?>
+</body>
+</html>
