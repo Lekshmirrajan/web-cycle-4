@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Add Two Numbers</title>
+</head>
+<body>
+<h2>Add Two Numbers</h2>
+<form action="" method="POST">
+enter first number:<input type="number" name="number1">
+enter second number:<input type="number" name="number2">
+<br> <br>
+<input type="submit" value="add"></form>
+
+<?php
+
+$number1 = $_POST['number1'];
+$number2 = $_POST['number2'];
+
+
+$sum = $number1 + $number2;
+
+echo"<h2>result</h2>";
+echo "<p>The sum of $number1 and $number2 is: $sum</p>";
+?>
+
+</body>
+</html>
