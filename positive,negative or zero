@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Number Character</title>
+</head>
+<body>
+<h2>To check if a number is positive, negative, or zero</h2>
+<form action="" method="POST">
+  Enter a number: <input type="number" name="number">
+  <input type="submit" value="Check">
+</form>
+
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+       
+        if (isset($_POST['number']) && is_numeric($_POST['number'])) {
+            $number = $_POST['number'];
+
+            
+            if ($number > 0) {
+                echo "<p>The number $number is positive.</p>";
+            } elseif ($number < 0) {
+                echo "<p>The number $number is negative.</p>";
+            } else {
+                echo "<p>The number is zero.</p>";
+            }
+        } else {
+            echo "<p>Please enter a valid number.</p>";
+        }
+    }
+?>
+
+</body>
+</html>
