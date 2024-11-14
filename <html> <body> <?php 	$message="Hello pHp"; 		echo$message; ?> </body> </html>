@@ -1,0 +1,8 @@
+<html>
+<body>
+<?php
+	$message="Hello pHp";
+		echo$message;
+?>
+</body>
+</html>
