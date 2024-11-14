@@ -1,0 +1,22 @@
+<html>
+<head><title>Factorial Calculator</title></head>
+<body>
+<h2>Factorial Generator</h2>
+<form action=" " method="POST">
+    Enter a number: <input type="number" name="number">
+    <input type="submit" value="Calculate Factorial">
+</form>
+
+<?php
+
+    $number = $_POST['number'];
+    $result = 1;
+    for ($i = 1; $i <= $number; $i++) {
+        $result *= $i;
+    }
+    echo "<h2>Factorial Result</h2>";
+    echo "<p>The factorial of $number is: $result</p>";
+
+?>
+</body>
+</html>
